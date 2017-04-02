@@ -9,15 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var tutorials_components_1 = require('./tutorials.components');
+var users_component_1 = require('./users.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>TEST</h1>\n            <my-tutorials>DDD</my-tutorials>",
-            directives: [tutorials_components_1.TutorialsComponent]
+            template: "<h1>User Management Application</h1>\n  <user-contoler></user-contoler>\n  ",
+            directives: [users_component_1.UsersCRUD]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

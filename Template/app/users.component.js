@@ -9,19 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var TutorialsComponent = (function () {
-    function TutorialsComponent() {
-        this.title = "Some tutorials from something";
+var UsersCRUD = (function () {
+    function UsersCRUD() {
+        this.userList = null;
     }
-    TutorialsComponent = __decorate([
+    UsersCRUD = __decorate([
         core_1.Component({
-            selector: 'my-tutorials',
-            template: "<h2>My first component from tuts.</h2>\n    <h4>Tutorials goes on...</h4>\n    {{title}}\n    ",
-            styles: ["h4 {\n        color: red\n    }"]
+            selector: 'user-contoler',
+            template: "<h2>List Of Users</h2>"
         }), 
         __metadata('design:paramtypes', [])
-    ], TutorialsComponent);
-    return TutorialsComponent;
+    ], UsersCRUD);
+    return UsersCRUD;
 }());
-exports.TutorialsComponent = TutorialsComponent;
-//# sourceMappingURL=tutorials.components.js.map
+exports.UsersCRUD = UsersCRUD;
+//# sourceMappingURL=users.component.js.map
