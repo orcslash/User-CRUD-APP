@@ -9,19 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var tutorials_components_1 = require('./tutorials.components');
-var AppComponent = (function () {
-    function AppComponent() {
+var TutorialsComponent = (function () {
+    function TutorialsComponent() {
     }
-    AppComponent = __decorate([
+    TutorialsComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<h1>TEST</h1>\n            <my-tutorials>DDD</my-tutorials>",
-            directives: [tutorials_components_1.TutorialsComponent]
+            selector: 'my-tutorials',
+            template: '<h2>My first component from tuts.</h2>'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], TutorialsComponent);
+    return TutorialsComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.TutorialsComponent = TutorialsComponent;
+//# sourceMappingURL=tutorials.components.js.map
