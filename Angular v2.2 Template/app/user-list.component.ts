@@ -3,40 +3,58 @@ import { UserService } from "./user-service";
 
 @Component({
     selector: 'user-list',
-    template: `<h2>User List</h2>
-            <table class="dataTable">
+    template: `
+            <h2>User List</h2>
+            <ul id="userList">
+            <li *ngFor="let user of userList" (click)="editUser(user)">{{user.name}}</li>
+            </ul>
+            <table>
             <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>User Name</th>
-            <th>Actions</th>
+                <th>Edit/Delete</th>
+                <th>Add User</th>
             </tr>
-            <tr *ngFor="let user of users">
-            <td>{{user.id}}</td>
-            <td>{{user.name}}</td>
-            <td>{{user.username}}</td>
-            <td><button (click)="removeUser(user.id)">Delete</button> | Update | Review</td>
+            <tr>
+                <td>
+                <input type="text" [(ngModel)]="selectedUser.name">
+                <button (click)="deleteUser()">Delete</button>
+                </td>
+                <td>
+                <input type="text" #user>
+                <button (click)="addUser(user)">Add User</button>
+                </td>
             </tr>
-            </table> 
-            
-            <button (click)="addUser()">adddummyuser</button>`,
+            </table>
+            `,
 })
-export class UserListComponent implements OnInit {
-    public userList = [{id: 1, name: "Nick Wright", username: "Night"}];
-    users = [];
-    constructor(private _userService: UserService) { }
+/**
+ * {UserListComponent} class manages user information.
+ * @author Mintautas Kiulkys
+ */
+export class UserListComponent {
+    public userList = [
+        { name: "King Hill" }, 
+        { name: "Bruce Wayne" }, 
+        { name: "Stan Smith" }];
 
-        removeUser(id) {
-        // this.users = this.users.filter(function (user) {
-        //     return user.id !== id;
-        // });
+    public selectedUser = { name: "" };
+
+    editUser(user) {
+        this.selectedUser = user;
     }
 
-    addUser() {
-        this._userService.createUser({id: 666, name: 'Shit Stain', username: 'ttatata'});
+    addUser(user) {
+        this.userList.push(
+            { name: user.value })
     }
 
-    ngOnInit() {
-        this._userService.getUsers().subscribe(resUserData => this.users = resUserData);
+    deleteUser() {
+        this.userList.splice(this.userList.indexOf(this.selectedUser));
     }
+
+    // ngOnInit() {
+    //     this._userService.getUsers().subscribe(resUserData => this.users = resUserData);
+    // }
+
+    // users = [];
+    // constructor(private _userService: UserService) { }
 }

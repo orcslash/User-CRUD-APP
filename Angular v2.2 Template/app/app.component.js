@@ -10,14 +10,13 @@ var core_1 = require("@angular/core");
 var user_service_1 = require("./user-service");
 var AppComponent = (function () {
     function AppComponent() {
-        this.name = 'Angular';
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "<h1>Hello {{name}}</h1>\n  <user-list></user-list>",
+        template: "<h1>User Information Management App</h1>\n  <user-list></user-list>",
         providers: [user_service_1.UserService]
     })
 ], AppComponent);
